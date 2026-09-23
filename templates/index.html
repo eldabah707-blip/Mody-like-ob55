@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MODY • Free Fire Like Service</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap');
+:root{--bg:#050711;--card:#0b1020;--line:#25213f;--purple:#8b2cff;--violet:#c12dff;--text:#f8f5ff;--muted:#9b98b0}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 50% -10%,#29104f 0,#090814 38%,#050711 75%);color:var(--text);font-family:Cairo,Arial,sans-serif}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;background:linear-gradient(115deg,transparent 30%,#7a20ff08 50%,transparent 70%)}
+.container{width:min(1180px,94%);margin:auto}.nav{height:76px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #ffffff0c}
+.logo{display:flex;align-items:center;gap:12px}.mark{font-size:35px;font-weight:900;font-style:italic;color:#9c36ff;text-shadow:0 0 25px #8b2cff}.tag{font-size:11px;line-height:1.1;color:#d9d3e9;text-align:left;direction:ltr}
+.links{display:flex;gap:34px;color:#c7c2d7;font-size:14px}.links a{color:inherit;text-decoration:none}.links a.active{color:#c34bff}
+.pill{border:1px solid #8e31ff;border-radius:30px;padding:10px 19px;color:#fff;background:#681cff22;box-shadow:0 0 20px #8b2cff22}
+.hero{min-height:335px;display:grid;place-items:center;text-align:center;position:relative;overflow:hidden}.hero h1{font-size:70px;margin:22px 0 0;font-style:italic;color:#a52cff;text-shadow:0 0 30px #8b2cff66}.hero h2{font-size:27px;margin:0}.hero p{color:#b5aec5}.chips{display:flex;justify-content:center;gap:25px;color:#d65aff;font-weight:800}
+.grid{display:grid;grid-template-columns:250px 1fr 270px;gap:18px;align-items:stretch}.card{background:linear-gradient(180deg,#0d1222f2,#090e1bf2);border:1px solid var(--line);border-radius:17px;box-shadow:0 15px 55px #0007;padding:20px}.card h3{margin:0 0 18px;font-size:18px}.features{display:grid;gap:10px}.feature{display:flex;gap:11px;align-items:center;border-bottom:1px solid #ffffff0b;padding:12px 0}.icon{width:39px;height:39px;border-radius:11px;display:grid;place-items:center;background:#7f2cff18;border:1px solid #8b2cff66;color:#bd5cff;font-size:19px}
+.center{border:2px solid #a42eff;box-shadow:0 0 35px #8b2cff22}.center h2{text-align:center;font-size:24px;border-bottom:1px solid #ffffff12;padding-bottom:15px}.field{margin:15px 0}.field label{display:block;color:#c7c1d3;font-size:13px;margin-bottom:7px}input,select{width:100%;padding:14px;border-radius:11px;border:1px solid #6b5b91;background:#080c18;color:white;outline:none;font:inherit}input:focus,select:focus{border-color:#b02cff;box-shadow:0 0 0 3px #9d2cff16}
+.btn{width:100%;border:0;border-radius:12px;padding:15px;background:linear-gradient(90deg,#7c25ff,#c62dff);color:white;font:800 16px Cairo;cursor:pointer;box-shadow:0 10px 30px #8b2cff33}.btn:disabled{opacity:.6;cursor:wait}
+.note{margin-top:14px;border:1px solid #ffffff12;border-radius:10px;padding:12px;color:#928da3;font-size:12px;text-align:center}
+.profile{text-align:right}.avatar{width:70px;height:70px;border-radius:50%;margin:4px auto 12px;border:2px solid #a52cff;background:radial-gradient(circle,#54209a,#101324);display:grid;place-items:center;font-size:28px;box-shadow:0 0 24px #8b2cff55}.name{text-align:center;font-weight:800}.uid{text-align:center;color:#aaa3b7;font-size:12px}.stat{margin-top:16px;padding:14px;border:1px solid #ffffff12;border-radius:12px}.stat-top{display:flex;justify-content:space-between;color:#bcb5ca;font-size:12px}.num{font-size:25px;font-weight:900;margin-top:5px}.bar{height:7px;border-radius:8px;background:#211b37;margin-top:9px;overflow:hidden}.bar i{display:block;width:70%;height:100%;background:linear-gradient(90deg,#7925ff,#d331ff);border-radius:8px}
+.regions{margin-top:18px}.region-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.region{padding:16px 10px;border:1px solid #28233f;border-radius:12px;text-align:center;background:#090d19;cursor:pointer}.region.active{border-color:#b72eff;box-shadow:0 0 22px #8b2cff18}.flag{font-size:25px}.region small{display:block;color:#aaa5b7;margin-top:5px}
+.footer{text-align:center;padding:35px 0;color:#6e697e;font-size:12px}.toast{margin-top:14px;padding:12px;border-radius:10px;display:none}.ok{background:#1a8c5718;color:#75e2ac;border:1px solid #43c98733}.err{background:#a51f3518;color:#ff899c;border:1px solid #ff526633}
+@media(max-width:900px){.grid{grid-template-columns:1fr}.links{display:none}.hero h1{font-size:53px}.region-grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:480px){.hero h1{font-size:43px}.hero h2{font-size:21px}.container{width:92%}}
+</style>
+</head>
+<body>
+<div class="container">
+<header class="nav">
+  <div class="logo"><div class="mark">MODY</div><div class="tag">FREE FIRE<br>LIKE SERVICE</div></div>
+  <nav class="links"><a class="active" href="#">الرئيسية</a><a href="#profile">الملف الشخصي</a><a href="#regions">الترتيب</a><a href="#support">الدعم</a></nav>
+  <div class="pill">♛ MODY</div>
+</header>
+
+<section class="hero">
+  <div><h1>MODY</h1><h2>أرسل لايكاتك بسهولة وسرعة</h2><p>خدمة احترافية لزيادة لايكات حسابك في Free Fire</p><div class="chips"><span>سريع</span><span>•</span><span>آمن</span><span>•</span><span>مضمون</span></div></div>
+</section>
+
+<section class="grid">
+  <aside class="card">
+    <h3>★ مميزات الموقع</h3>
+    <div class="features">
+      <div class="feature"><div class="icon">◎</div><div>دعم جميع المناطق<br><small style="color:#8f899e">شمال أمريكا • أوروبا • آسيا • الشرق الأوسط</small></div></div>
+      <div class="feature"><div class="icon">🎁</div><div>حد يومي مجاني<br><small style="color:#8f899e">2 لايك يومياً لكل مستخدم</small></div></div>
+      <div class="feature"><div class="icon">◷</div><div>نظام الكول داون<br><small style="color:#8f899e">5 دقائق بين كل طلب</small></div></div>
+      <div class="feature"><div class="icon">✓</div><div>آمن وموثوق<br><small style="color:#8f899e">حماية كاملة لحسابك</small></div></div>
+      <div class="feature"><div class="icon">♧</div><div>دعم فني سريع<br><small style="color:#8f899e">مساعدتك دائماً</small></div></div>
+    </div>
+  </aside>
+
+  <main class="card center">
+    <h2>⚡ إرسال لايك</h2>
+    <div class="field"><label>◉ UID اللاعب</label><input id="uid" placeholder="أدخل UID الخاص بك..."></div>
+    <div class="field"><label>◎ اختر المنطقة</label>
+      <select id="region">
+        <option value="ME">🌐 الشرق الأوسط (ME)</option><option value="IND">🇮🇳 الهند (IND)</option><option value="ID">🇮🇩 إندونيسيا (ID)</option><option value="SG">🇸🇬 سنغافورة (SG)</option><option value="MY">🇲🇾 ماليزيا (MY)</option><option value="PH">🇵🇭 الفلبين (PH)</option><option value="BD">🇧🇩 بنغلاديش (BD)</option>
+      </select>
+    </div>
+    <button id="send" class="btn" onclick="sendLike()">➤ إرسال لايك</button>
+    <div class="note">⚡ سيتم إضافة اللايكات إلى حسابك خلال دقائق</div>
+    <div id="toast" class="toast"></div>
+  </main>
+
+  <aside class="card profile" id="profile">
+    <h3>👤 معلومات حسابك</h3>
+    <div class="avatar">M</div><div class="name">MODY ♛</div><div class="uid">UID: 830763151</div>
+    <div class="stat"><div class="stat-top"><span>♥ اللايكات المتاحة اليوم</span><b>2 / 2</b></div><div class="bar"><i></i></div></div>
+    <div class="stat"><div class="stat-top"><span>◷ وقت الانتظار القادم</span></div><div class="num">4:32</div><div class="bar"><i style="width:45%"></i></div></div>
+    <button class="btn" style="margin-top:14px" onclick="document.getElementById('region').focus()">◎ تغيير المنطقة</button>
+  </aside>
+</section>
+
+<section class="card regions" id="regions">
+  <h2 style="text-align:center;margin:0 0 4px">◎ اختر منطقتك</h2><p style="text-align:center;color:#777185;font-size:12px">جميع المناطق متاحة الآن</p>
+  <div class="region-grid">
+    <div class="region" onclick="pick('NA',this)"><div class="flag">🇺🇸</div>أمريكا الشمالية<small>(NA)</small></div>
+    <div class="region" onclick="pick('EU',this)"><div class="flag">🇪🇺</div>أوروبا<small>(EU)</small></div>
+    <div class="region" onclick="pick('AS',this)"><div class="flag">🌐</div>آسيا<small>(AS)</small></div>
+    <div class="region active" onclick="pick('ME',this)"><div class="flag">🌐</div>الشرق الأوسط<small>(ME)</small></div>
+  </div>
+</section>
+
+<footer class="footer" id="support">♛ MODY<br>FREE FIRE LIKE SERVICE • MADE FOR GAMERS<br><br>© 2026 MODY. All rights reserved.</footer>
+</div>
+
+<script>
+function pick(r,el){
+  document.querySelectorAll('.region').forEach(x=>x.classList.remove('active'));el.classList.add('active');
+  const map={ME:'ME',NA:'ME',EU:'ME',AS:'ME'};document.getElementById('region').value=map[r]||r;
+}
+async function sendLike(){
+  const uid=document.getElementById('uid').value.trim(), region=document.getElementById('region').value;
+  const btn=document.getElementById('send'), t=document.getElementById('toast');
+  if(!uid){show('err','⚠ أدخل UID اللاعب أولاً');return}
+  btn.disabled=true;btn.textContent='⏳ جاري الاتصال...';
+  try{
+    const r=await fetch('/api/player?uid='+encodeURIComponent(uid)+'&region='+region), d=await r.json();
+    if(!d.ok) throw new Error(d.error||'حدث خطأ');
+    show('ok','✓ تم العثور على اللاعب: '+d.nickname+' • اللايكات الحالية: '+d.likes);
+  }catch(e){show('err','✕ '+e.message)}
+  finally{btn.disabled=false;btn.textContent='➤ إرسال لايك'}
+}
+function show(cls,msg){const t=document.getElementById('toast');t.className='toast '+cls;t.style.display='block';t.textContent=msg}
+</script>
+</body>
+</html>
